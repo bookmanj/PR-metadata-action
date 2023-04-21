@@ -213,3 +213,5 @@ jobs:
 ~~~
 
 commit and push your changes
+
+lastly, go to your repo and create a new pull request and you should see the action run and add labels to your PR
