@@ -162,7 +162,7 @@ npm i -g @vercel/ncc
 
 Compile your code
 ~~~
-ncc build index.js -o dist
+ncc build index.js --license licenses.txt
 ~~~
 
 This will create a new directory called dist and create a file called index.js that contains our code and all the packages we need to run our action.
