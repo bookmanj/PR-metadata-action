@@ -27,7 +27,7 @@ jobs:
           echo "token: ${{ secrets.GITHUB_TOKEN }}"
       
       - name: Annotate PR
-        uses: bookmanj/PR-metadata-action@main
+        uses: bookmanj/PR-metadata-action@pr_test
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
