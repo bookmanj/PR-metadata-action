@@ -1,0 +1,35 @@
+name: PR metadata annotation
+
+on: 
+  push:
+    # branches:
+    #   - main
+  # pull_request:
+  #   types: [opened, reopened, synchronize]
+
+jobs:
+
+  annotate-pr:
+    runs-on: ubuntu-latest
+    name: Annotates pull request with metadata
+    steps:
+      
+      - name: Debug
+        run: |
+          echo "-----------------------------------------"
+          echo "pwd: $(pwd)"
+          echo "ls: $(ls -la)"
+          echo "ls dist: $(ls -la dist)"
+          echo "-----------------------------------------"
+          echo "owner: ${{ github.repository_owner }}"
+          echo "repo: ${{ github.event.repository.name }}"
+          echo "pr_number: ${{ github.event.number }}"
+          echo "token: ${{ secrets.GITHUB_TOKEN }}"
+      
+      - name: Annotate PR
+        uses: bookmanj/PR-metadata-action@main
+        with:
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          pr_number: ${{ github.event.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
